@@ -29,11 +29,32 @@ This lab demonstrates how to collect, analyze, and visualize security events usi
 ---
 
 ## 📖 Setup Guide
-1. **Install Splunk Enterprise** on the main VM  
-   ```bash
-   wget -O splunk-9.x.tgz "https://www.splunk.com/page/download_track?file=9.x...&platform=linux"
-   tar -xvzf splunk-9.x.tgz -C /opt
-   cd /opt/splunk/bin
-   ./splunk start --accept-license
-   ```
-2. Create an admin account during setup
+
+This section provides step-by-step instructions to set up the **Splunk SIEM Lab**, including installing Splunk Enterprise, configuring the receiver, and installing/configuring the Universal Forwarder on a Linux victim machine.
+
+### 1️⃣ Install Splunk Enterprise on the SIEM VM
+
+1. Download the latest Splunk Enterprise for Linux:
+
+```bash
+wget -O splunk-10.0.0-linux-x86_64.tgz "https://www.splunk.com/page/download_track?file=10.0.0/linux/splunk-10.0.0.tgz"
+```
+
+2. Extract the tarball to `/opt`
+   
+```bash
+sudo tar -xvzf splunk-10.0.0-linux-x86_64.tgz -C /opt
+```
+
+3. Start Splunk and accept the license
+
+```bash
+cd /opt/splunk/bin
+sudo ./splunk start --accept-license
+```
+
+4. Enable Splunk to start at boot
+
+```bash
+sudo ./splunk enable boot-start
+```

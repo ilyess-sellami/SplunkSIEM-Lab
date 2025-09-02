@@ -1,7 +1,0 @@
-# Alert: Suspicious File Extensions
-# Description: Detects creation of files with uncommon or suspicious extensions
-# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
-
-index=linux_logs sourcetype=file_changes
-| stats count by host, extension
-| where extension IN ("locky","crypt","cerber","zzzzz")

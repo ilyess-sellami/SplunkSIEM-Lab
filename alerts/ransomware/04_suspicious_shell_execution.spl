@@ -1,7 +1,0 @@
-# Alert: Suspicious Shell Execution
-# Description: Detects execution of shell scripts that contain encryption commands
-# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
-
-index=linux_logs sourcetype=syslog process_name="bash"
-| search cmd_line IN ("encrypt","crypt","lock")
-| stats count by host, cmd_line

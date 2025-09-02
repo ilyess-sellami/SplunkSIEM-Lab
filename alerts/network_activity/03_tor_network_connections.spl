@@ -1,7 +1,0 @@
-# Alert: Suspicious TOR-like Connections
-# Description: Detects connections on unusual high-number ports
-# MITRE ATT&CK ID: T1090 – Proxy
-
-index=linux_logs sourcetype=netflow dest_port>9000
-| stats count by host, dest_port
-| where count > 10

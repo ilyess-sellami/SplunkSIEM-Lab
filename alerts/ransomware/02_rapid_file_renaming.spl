@@ -1,7 +1,0 @@
-# Alert: Rapid File Renaming
-# Description: Detects files being renamed rapidly, typical ransomware behavior
-# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
-
-index=linux_logs sourcetype=file_changes
-| stats count by host, file_path
-| where count>5

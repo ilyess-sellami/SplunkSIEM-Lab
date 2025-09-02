@@ -1,8 +1,0 @@
-# Alert: Suspicious Library/Service Injection
-# Description: Detects unusual modification or injection in system libraries
-# MITRE ATT&CK ID: T1574 – Hijack Execution Flow
-
-index=linux_logs sourcetype=file_changes
-| search file_path IN ("/lib/*",".so","/usr/lib/*")
-| stats count by host, file_path
-| where count>1

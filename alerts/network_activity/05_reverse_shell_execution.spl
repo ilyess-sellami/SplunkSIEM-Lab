@@ -1,7 +1,0 @@
-# Alert: Reverse Shell / Backdoor Execution
-# Description: Detects execution of common reverse shell binaries
-# MITRE ATT&CK ID: T1059.001 – Command and Scripting Interpreter
-
-index=linux_logs sourcetype=syslog process_name IN ("nc","ncat")
-| stats count by host, dest_ip, process_name
-| where count>0
