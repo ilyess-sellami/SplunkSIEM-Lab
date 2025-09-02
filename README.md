@@ -66,3 +66,17 @@ http://<SIEM_VM_IP>:8000
 ```
 
 ![Splunk Login Page](./screenshots/splunk_login.png)
+
+
+### 2️⃣ Configure Data Reception on Splunk (Port 9997)
+After installing Splunk Enterprise, the next step is to configure it to ***receive logs from remote machines*** using the Splunk Universal Forwarder.
+
+1. Log in to the Splunk Web interface
+2. Navigate to ***Settings → Forwarding and receiving → Receive data***.
+3. Click ***New Receiving Port***.
+4. Enter ***9997*** as the port number.
+5. Save the configuration.
+
+
+![Splunk Data Reception](./screenshots/splunk_data_reception.png)
+
