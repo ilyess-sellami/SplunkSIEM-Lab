@@ -1,0 +1,7 @@
+# Alert: New User Account Creation
+# Description: Detects the creation of new system users, which may indicate persistence setup
+# MITRE ATT&CK ID: T1136 – Create Account
+
+index=linux_logs sourcetype=syslog
+| search msg IN ("useradd","adduser")
+| stats count by host, msg

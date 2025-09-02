@@ -1,0 +1,7 @@
+# Alert: Excessive Network Connections
+# Description: Detects connections to known mining pool ports indicating possible crypto-mining
+# MITRE ATT&CK ID: T1496 – Resource Hijacking
+
+index=linux_logs sourcetype=netflow dest_port IN (3333,5555)
+| stats count by dest_ip
+| where count>50

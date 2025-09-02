@@ -1,0 +1,7 @@
+# Alert: CPU Spike Detection
+# Description: Detects unusually high CPU usage that may indicate cryptojacking activity
+# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
+
+index=linux_logs sourcetype=metrics cpu_percent>80
+| stats max(cpu_percent) as max_cpu by host
+| where max_cpu>80

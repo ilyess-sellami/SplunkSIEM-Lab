@@ -1,0 +1,7 @@
+# Alert: Outbound Traffic Spike
+# Description: Detects unusually high outbound connections which may indicate crypto activity
+# MITRE ATT&CK ID: T1496 – Resource Hijacking
+
+index=linux_logs sourcetype=netflow
+| stats count by host, dest_ip, dest_port
+| where count > 50

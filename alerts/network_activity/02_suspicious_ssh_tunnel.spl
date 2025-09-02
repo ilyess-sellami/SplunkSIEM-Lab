@@ -1,0 +1,7 @@
+# Alert: Suspicious SSH Tunnel
+# Description: Detects unusual SSH connections that may indicate tunneling
+# MITRE ATT&CK ID: T1572 – Protocol Tunneling
+
+index=linux_logs sourcetype=syslog process_name="ssh"
+| stats count by host, cmd_line
+| where count > 5

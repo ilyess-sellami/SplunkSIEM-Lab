@@ -1,0 +1,7 @@
+# Alert: Unexpected Scheduled Jobs
+# Description: Detects cron jobs that contain suspicious commands
+# MITRE ATT&CK ID: T1053.003 – Scheduled Task/Job
+
+index=linux_logs sourcetype=cron
+| search cmd_line IN ("miner","crypto","encrypt")
+| stats count by host, cmd_line

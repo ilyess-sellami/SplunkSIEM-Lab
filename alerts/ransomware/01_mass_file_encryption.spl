@@ -1,0 +1,7 @@
+# Alert: Mass File Encryption
+# Description: Detects multiple file modifications with extensions typical for encryption
+# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
+
+index=linux_logs sourcetype=file_changes
+| stats count by host, file_path, extension
+| where extension IN ("locked","encrypted","crypt") AND count>5

@@ -1,0 +1,7 @@
+# Alert: Sudden Sudo Privilege Escalation
+# Description: Detects users gaining sudo privileges unexpectedly
+# MITRE ATT&CK ID: T1078 – Valid Accounts
+
+index=linux_logs sourcetype=syslog
+| search msg IN ("sudo","added to sudoers")
+| stats count by host, user

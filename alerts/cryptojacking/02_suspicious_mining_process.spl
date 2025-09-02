@@ -1,0 +1,6 @@
+# Alert: Suspicious Mining Process
+# Description: Detects known crypto-mining processes (xmrig, minerd, crypto-miner)
+# MITRE ATT&CK ID: T1496 – Resource Hijacking
+
+index=linux_logs sourcetype=processes process_name IN ("xmrig","minerd","crypto-miner")
+| stats count by host, process_name

@@ -1,0 +1,7 @@
+# Alert: Unexpected File Deletion
+# Description: Detects multiple file deletions in a short period
+# MITRE ATT&CK ID: T1486 – Data Encrypted for Impact
+
+index=linux_logs sourcetype=file_changes action="deleted"
+| stats count by host, file_path
+| where count>5

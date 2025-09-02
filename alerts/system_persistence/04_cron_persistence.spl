@@ -1,0 +1,7 @@
+# Alert: Cron Job Persistence
+# Description: Detects suspicious cron jobs added for persistence
+# MITRE ATT&CK ID: T1053.003 – Scheduled Task/Job
+
+index=linux_logs sourcetype=cron
+| stats count by host, cmd_line
+| where cmd_line IN ("miner","crypto","encrypt","backdoor")

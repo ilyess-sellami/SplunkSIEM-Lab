@@ -1,0 +1,6 @@
+# Alert: Hidden Mining Processes
+# Description: Detects crypto-mining processes spawned from unusual parent processes (e.g., SSH)
+# MITRE ATT&CK ID: T1059.004 – Unix Shell
+
+index=linux_logs sourcetype=processes parent_process_name="ssh" process_name IN ("xmrig")
+| stats count by host, process_name

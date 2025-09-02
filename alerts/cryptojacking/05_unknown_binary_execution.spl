@@ -1,0 +1,6 @@
+# Alert: Unknown Binary Execution
+# Description: Detects execution of binaries not listed in known safe binaries (potential cryptojacking malware)
+# MITRE ATT&CK ID: T1059 – Command and Scripting Interpreter
+
+index=linux_logs sourcetype=syslog "exec"
+| where NOT [| inputlookup known_binaries.csv | fields process_name]

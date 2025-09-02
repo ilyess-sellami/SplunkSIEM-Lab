@@ -1,0 +1,8 @@
+# Alert: Unexpected Service Start
+# Description: Detects new or unusual services starting on the system
+# MITRE ATT&CK ID: T1543 – Create or Modify System Process
+
+index=linux_logs sourcetype=syslog
+| search msg IN ("systemd","service started")
+| stats count by host, msg
+| where count>2
