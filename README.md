@@ -158,4 +158,4 @@ index="linux_logs"
 
 ## ✅ Conclusion
 
-This lab provides a hands-on setup for Splunk Enterprise and Universal Forwarders, showing how to collect, index, and search logs from remote machines. With this foundation, you can start exploring SIEM workflows, monitoring security events, and building dashboards for SOC analysis.
+This lab provides a hands-on setup for **Splunk Enterprise** and **Universal Forwarders**, showing how to collect, index, and search logs from remote machines. With this foundation, you can start exploring SIEM workflows, monitoring security events, and building dashboards for SOC analysis.
