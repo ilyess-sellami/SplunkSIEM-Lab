@@ -125,4 +125,31 @@ sudo ./splunk start --accept-license
 sudo ./splunk enable boot-start
 ```
 
+**Step 4.2: Configure Forwarding to the Splunk Server**
 
+1. Add your Splunk Enterprise server as the receiving target:
+```bash
+sudo ./splunk add forward-server <SIEM_VM_IP>:9997 -auth admin:<SPLUNK_PASSWORD>
+```
+
+2. Add monitors to send system logs and authentication logs to your custom index `linux_logs`:
+```bash
+sudo ./splunk add monitor /var/log/syslog -index linux_logs
+sudo ./splunk add monitor /var/log/auth.log -index linux_logs
+```
+
+3. Restart the forwarder to apply the changes:
+```bash
+sudo ./splunk restart
+```
+
+**Step 4.3: Verify Forwarder Connection**
+1. Log in to the Splunk Web interface.
+2. Go to **Discover & Search**.
+3. Run the following search to verify logs are being indexed correctly:
+```bash
+index="linux_logs"
+```
+4. You should see entries from both `syslog` and `auth.log`, confirming that the forwarder is successfully sending logs to your Splunk server.
+
+![Splunk Discover](./screenshots/splunk_discover.png)
