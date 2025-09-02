@@ -16,7 +16,7 @@ This lab demonstrates how to collect, analyze, and visualize security events usi
 ## 🏗️ Lab Architecture
 - **Splunk Enterprise Server** → Central SIEM  
 - **Universal Forwarders** → Remote log collectors (Linux/Windows)  
-- **Data Sources** → System logs, authentication logs, honeypot logs, etc.  
+- **Data Sources** → System logs, authentication logs, etc.  
 
 ---
 
@@ -92,3 +92,37 @@ linux_logs
 3. Click ***Save***.
 
 ![Splunk Custom Index](./screenshots/splunk_custom_index.png)
+
+
+### 4️⃣ Install and Configure the Splunk Universal Forwarder on a Remote VM
+To collect logs from remote machines and send them to your Splunk Enterprise server, you need to install the ***Splunk Universal Forwarder*** on each target VM.
+
+**Step 4.1: Download and Install the Forwarder**
+
+1. SSH into the remote VM (Linux example):
+```bash
+ssh user@<REMOTE_VM_IP>
+```
+
+2. Download the latest Universal Forwarder:
+```bash
+wget -O splunkforwarder-10.0.0-linux-x86_64.tgz "https://www.splunk.com/page/download_track?file=10.0.0/universalforwarder/linux/splunkforwarder-10.0.0.tgz"
+```
+
+3. Extract the tarball to `/opt`:
+```bash
+sudo tar -xvzf splunkforwarder-10.0.0-linux-x86_64.tgz -C /opt
+```
+
+4. Start the forwarder and accept the license:
+```bash
+cd /opt/splunkforwarder/bin
+sudo ./splunk start --accept-license
+```
+
+5. Enable the forwarder to start at boot:
+```bash
+sudo ./splunk enable boot-start
+```
+
+
