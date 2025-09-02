@@ -80,3 +80,15 @@ After installing Splunk Enterprise, the next step is to configure it to ***recei
 
 ![Splunk Data Reception](./screenshots/splunk_data_reception.png)
 
+
+### 3️⃣ Create a Custom Index
+Creating a custom index helps organize incoming logs for better management and searching.
+
+1. Go to ***Settings → Indexes → New Index***.
+2. Enter the index name:
+```bash
+linux_logs
+```
+3. Click ***Save***.
+
+![Splunk Custom Index](./screenshots/splunk_custom_index.png)
