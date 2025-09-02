@@ -58,3 +58,11 @@ sudo ./splunk start --accept-license
 ```bash
 sudo ./splunk enable boot-start
 ```
+
+5. Open your browser and go to Splunk Web
+
+```bash
+http://<SIEM_VM_IP>:8000
+```
+
+![Splunk Login Page](./screenshots/splunk_login.png)
