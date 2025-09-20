@@ -1,7 +1,11 @@
 # 🛡️ Splunk SIEM Lab
 
-A hands-on lab environment for learning, testing, and showcasing **Splunk** as a Security Information and Event Management (SIEM) solution.  
-This lab demonstrates how to collect, analyze, and visualize security events using Splunk Enterprise and Splunk Universal Forwarder.
+![Splunk SIEM Lab](/screenshots/SplunkSIEM-Lab.png)
+
+---
+
+A **hands-on lab** environment for learning, testing, and showcasing **Splunk** as a **Security Information and Event Management (SIEM)** solution.  
+This lab demonstrates how to **collect, analyze, and visualize security events** using **Splunk Enterprise** and **Splunk Universal Forwarder**.
 
 ---
 
