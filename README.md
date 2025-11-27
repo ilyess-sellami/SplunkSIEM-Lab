@@ -1,5 +1,7 @@
 # 🛡️ Splunk SIEM Lab
 
+---
+
 ![Splunk SIEM Lab](/screenshots/SplunkSIEM-Lab.png)
 
 ---
@@ -10,6 +12,7 @@ This lab demonstrates how to **collect, analyze, and visualize security events**
 ---
 
 ## 🚀 Features
+
 - Install and configure **Splunk Enterprise**  
 - Add **data inputs** for security logs  
 - Deploy **Splunk Universal Forwarders** on remote machines  
@@ -18,6 +21,7 @@ This lab demonstrates how to **collect, analyze, and visualize security events**
 ---
 
 ## 🏗️ Lab Architecture
+
 - **Splunk Enterprise Server** → Central SIEM  
 - **Universal Forwarders** → Remote log collectors (Linux/Windows)  
 - **Data Sources** → System logs, authentication logs, etc.  
@@ -25,6 +29,7 @@ This lab demonstrates how to **collect, analyze, and visualize security events**
 ---
 
 ## ⚙️ Requirements
+
 - Virtualization tool (VMware / VirtualBox / Proxmox)  
 - Linux-based VM for Splunk Enterprise  
 - Additional VMs (optional) for forwarders  
@@ -73,6 +78,7 @@ http://<SIEM_VM_IP>:8000
 
 
 ### 2️⃣ Configure Data Reception on Splunk (Port 9997)
+
 After installing Splunk Enterprise, the next step is to configure it to **receive logs from remote machines** using the Splunk Universal Forwarder.
 
 1. Log in to the Splunk Web interface
@@ -86,6 +92,7 @@ After installing Splunk Enterprise, the next step is to configure it to **receiv
 
 
 ### 3️⃣ Create a Custom Index
+
 Creating a custom index helps organize incoming logs for better management and searching.
 
 1. Go to **Settings → Indexes → New Index**.
@@ -99,6 +106,7 @@ linux_logs
 
 
 ### 4️⃣ Install and Configure the Splunk Universal Forwarder on a Remote VM
+
 To collect logs from remote machines and send them to your Splunk Enterprise server, you need to install the **Splunk Universal Forwarder** on each target VM.
 
 **Step 4.1: Download and Install the Forwarder**
@@ -148,6 +156,7 @@ sudo ./splunk restart
 ```
 
 **Step 4.3: Verify Forwarder Connection**
+
 1. Log in to the Splunk Web interface.
 2. Go to **Discover & Search**.
 3. Run the following search to verify logs are being indexed correctly:
