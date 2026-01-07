@@ -2,7 +2,7 @@
 
 ---
 
-![Splunk SIEM Lab](/screenshots/Splunk-SIEM-Lab.png)
+![Splunk SIEM Lab](/docs/Splunk-SIEM-Lab.png)
 
 ---
 
@@ -74,7 +74,7 @@ sudo ./splunk enable boot-start
 http://<SIEM_VM_IP>:8000
 ```
 
-![Splunk Login Page](./screenshots/splunk_login.png)
+![Splunk Login Page](./docs/splunk_login.png)
 
 
 ### 2️⃣ Configure Data Reception on Splunk (Port 9997)
@@ -88,7 +88,7 @@ After installing Splunk Enterprise, the next step is to configure it to **receiv
 5. Save the configuration.
 
 
-![Splunk Data Reception](./screenshots/splunk_data_reception.png)
+![Splunk Data Reception](./docs/splunk_data_reception.png)
 
 
 ### 3️⃣ Create a Custom Index
@@ -102,7 +102,7 @@ linux_logs
 ```
 3. Click **Save**.
 
-![Splunk Custom Index](./screenshots/splunk_custom_index.png)
+![Splunk Custom Index](./docs/splunk_custom_index.png)
 
 
 ### 4️⃣ Install and Configure the Splunk Universal Forwarder on a Remote VM
@@ -165,7 +165,7 @@ index="linux_logs"
 ```
 4. You should see entries from both `syslog` and `auth.log`, confirming that the forwarder is successfully sending logs to your Splunk server.
 
-![Splunk Discover](./screenshots/splunk_discover.png)
+![Splunk Discover](./docs/splunk_discover.png)
 
 ---
 
