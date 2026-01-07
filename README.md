@@ -2,7 +2,7 @@
 
 ---
 
-![Splunk SIEM Lab](/docs/Splunk-SIEM-Lab.png)
+![Splunk SIEM Lab](/docs/github_banner_image.png)
 
 ---
 
